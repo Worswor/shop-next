@@ -14,9 +14,7 @@ export default function Navbar() {
     <nav className="navbar">
         <Link href="/">Home</Link>
         <Link href="/shop">Shop</Link>
-        <Link href="/cart">
-          Cart ({totalItems})
-        </Link>
+        <Link href="/cart">Cart ({totalItems})</Link>
     </nav>
   );
 }
