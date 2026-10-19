@@ -1,5 +1,4 @@
 "use client";
-
 // Link is used to navigation between Next.js pages.
 // useSelector is used to read data from Redux-store.
 import Link from "next/link";

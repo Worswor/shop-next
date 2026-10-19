@@ -1,4 +1,6 @@
 const placeholderImage = "/random_electronics.jpg";
+const laptopImage = "/laptop.jpg";
+const phoneImage = "/smartphone.jpg";
 
 const products = [
   { id: 1, name: "Laptop", price: 1799.95, image: placeholderImage },
