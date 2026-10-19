@@ -2,7 +2,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../redux/cartSlice";
-import products from "../../data/products";
+import products from "../../redux/products";
 
 export default function ShopPage() {
   const dispatch = useDispatch();
