@@ -7,11 +7,9 @@ export default function HomePage() {
 
       <p>Welcome to my online shop! :D</p>
 
-      <link href="/shop">
-        <button type="button">
+      <Link className="button-link" href="/shop">
           Start shopping
-        </button>
-      </link>
+      </Link>
     </div>
   );
 }
