@@ -45,19 +45,21 @@ export default function CartPage() {
     <div className="page cart-page">
       <h1>Shopping Cart</h1>
 
+       {/* Render the cart items or a message if the cart is empty */}
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
-      ) : (
+      ) : ( // or Render the list of cart items and the Clear Cart button
         <>
           <p>
-            Total Items: {totalItems}
-            Total Price: ${totalPrice.toFixed(2)}
+            You have {totalItems} item
+            {totalItems !== 1 ? "s" : ""} in your cart.
           </p>
 
           <div className="cart-items">
             {cartItems.map((item) => (
               <div className="cart-item" key={item.id}>
                 <img src={item.image} alt={item.name} />
+                {/* Display the item name, price, and quantity controls */}
                 <div className="cart-item-details">
                   <h2>{item.name}</h2>
                   <p>Price: ${item.price.toFixed(2)}</p>
@@ -75,13 +77,12 @@ export default function CartPage() {
                     </button>
                   </div>
                 </div>
-
+                {/* Display the total price for this item and a Remove button */}
                 <div className="cart-item-right">
                   <strong>
                       ${(item.price * item.quantity).toFixed(2)}
                   </strong>
-
-                  <button classname="remove-button"
+                  <button className="remove-button"
                    onClick={() => dispatch(removeFromCart(item.id))}>
                     Remove
                   </button>
@@ -89,19 +90,18 @@ export default function CartPage() {
               </div>
             ))}
           </div>
-
+          {/* Display the total price and buttons for clearing the cart and confirming the order */}
           <div className="cart-summary">
             <h2>Total: ${totalPrice.toFixed(2)}</h2>
             <div className="cart-buttons">
-                <button className="clear-button"
-                onClick={() => dispatch(clearCart())}>
+              {/* Empties cart, without confirmation */}
+              <button className="clear-button" onClick={() => dispatch(clearCart())}>
                   Empty Cart
-                </button>
-
-                <button className="confirm-button"
-                onClick={handleConfirmPurchase}>
-                  Confirm Purchase
-                </button>
+              </button>
+              {/* Empties cart, with confirmation */}
+              <button className="confirm-button" onClick={handleConfirmPurchase}>
+                Confirm Purchase
+              </button>
             </div>
           </div>
         </>

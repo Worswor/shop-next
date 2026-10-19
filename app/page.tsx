@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+// Next.js uses this component as front-page,
+// because this file is named app/page.jsx
 export default function HomePage() {
   return (
     <div className="home-page">

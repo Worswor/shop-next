@@ -5,14 +5,17 @@ import { addToCart, removeFromCart } from "../../redux/cartSlice";
 import products from "../../redux/products";
 
 export default function ShopPage() {
+  // Create access to Redux-dispatch
   const dispatch = useDispatch();
 
   return (
     <div className="page">
       <h1>Electronic shop</h1>
-
+      {/* Render the product grid */}
       <div className="product-grid">
+        {/* Map through the products array and render each product */}
         {products.map((product) => (
+          // Each product card has a unique key based on the product's id
           <div key={product.id} className="product-card">
             <img src={product.image} alt={product.name} />
             <h2>{product.name}</h2>
